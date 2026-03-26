@@ -12,7 +12,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn statsmodels streamlit n
 ## How to Run
 
 ### 1. Generating the Analysis Notebook
-I provide a script that takes the raw data and generates the final analysis notebook automatically. This ensures the study is fully reproducible. To run it:
+I included a script that takes the raw data and generates the final analysis notebook automatically. This ensures the study is fully reproducible. To run it:
 
 python create_notebook.py
 
@@ -40,4 +40,4 @@ After running this command, your terminal will provide a local URL (typically ht
 - historical_data.csv: Trade-level data from 32 Hyperliquid traders.
 
 ## My Approach
-I starting by aggregates over 210,000 individual trades from 32 accounts into a daily format. I then used statistical tests and clustering to see if a trader's "vibe" changes when the market turns fearful. The project moves from raw CSVs to engineered features, through statistical tests and K-Means segmentation (Silhouette 0.73), identifying how different trader archetypes respond to market sentiment.
+I started by aggregating over 210,000 individual trades from 32 accounts into a daily format. I then used statistical tests and clustering to see if a trader's "vibe" changes when the market turns fearful. The project moves from raw CSVs to engineered features, through statistical tests and K-Means segmentation (Silhouette 0.73), identifying how different trader archetypes respond to market sentiment.
