@@ -27,8 +27,10 @@ Despite this frantic activity and larger capital deployment, the median daily Pn
 ### 2. High-Exposure Overconfidence & Drawdown Risk
 I noticed a counter-intuitive trend among my top-quartile traders: their average drawdown is actually **higher during Greed periods ($13,980) than during Fear ($12,243)**. This suggests that overconfident positioning during bullish regimes builds up peak equity that creates far more painful peak-to-trough losses when the trend eventually reverses.
 
-### 3. Predictive Signals
-By training a predictive model, I found that sentiment is a genuine leading indicator. My **Logistic Regression** achieved **77% precision** in predicting next-day profitability. When the model predicts a winner, it's correct approximately 3 times out of 4, with "Greed" sentiment acting as one of the strongest positive predictors of future PnL.
+### 3. Advanced Predictive Modeling (Walk-Forward Validation)
+By moving beyond basic snapshots, I built a predictive model that captures trader "momentum." I added **3-day rolling averages** for PnL and trade activity, allowing the model to see if a trader is on a winning or losing streak. 
+
+Most importantly, I implemented a **Walk-Forward (TimeSeriesSplit) validation strategy**. In quantitative finance, standard random splits are often invalid because they inadvertently "shout" from the future into the past. By testing only on the future, I achieved a **~72% precision** using a modern **Gradient Boosting** aggregator. When the model predicts a profitable next day, it is right nearly 3 out of 4 times—a reliable risk filter that could allow a platform to dynamically adjust position limits or issue proactive warnings.
 
 ---
 
